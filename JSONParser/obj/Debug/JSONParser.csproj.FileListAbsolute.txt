@@ -1,0 +1,8 @@
+C:\Users\zufferey\Work\FormulaJSON\JSONParser\bin\Debug\JSONParser.dll
+C:\Users\zufferey\Work\FormulaJSON\JSONParser\bin\Debug\JSONParser.pdb
+C:\Users\zufferey\Work\FormulaJSON\JSONParser\bin\Debug\Core.dll
+C:\Users\zufferey\Work\FormulaJSON\JSONParser\bin\Debug\Microsoft.Z3.dll
+C:\Users\zufferey\Work\FormulaJSON\JSONParser\bin\Debug\libz3.dll
+C:\Users\zufferey\Work\FormulaJSON\JSONParser\obj\Debug\JSONParser.csprojResolveAssemblyReference.cache
+C:\Users\zufferey\Work\FormulaJSON\JSONParser\obj\Debug\JSONParser.dll
+C:\Users\zufferey\Work\FormulaJSON\JSONParser\obj\Debug\JSONParser.pdb

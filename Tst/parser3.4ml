@@ -1,0 +1,21 @@
+[
+parsers.JSONParser = '"JSONParser at ..\JSONParser\bin\Debug\JSONParser.dll"',
+parse_ActiveParser = "JSONParser"
+]
+
+model M1a of JSON at "../JSON.4ml"
+{
+    `{
+        "menu": {
+            "id": "file",
+            "value": "File",
+            "popup": {
+                "menuitem": [
+                    {"value": "New", "onclick": "CreateNewDoc()"},
+                    {"value": "Open", "onclick": "OpenDoc()"},
+                    {"value": "Close", "onclick": "CloseDoc()"}
+                ]
+            }
+        }
+    }`.
+}

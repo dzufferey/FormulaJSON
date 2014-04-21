@@ -1,0 +1,24 @@
+model simple of JSON at "../JSON.4ml"
+{
+    Members(Pair("menu",
+        Members(Pair("id", "file"),
+        Members(Pair("value", "File"),
+        Members(Pair("popup",
+            Members(Pair("menuitem",
+                Elements(
+                    Members(Pair("value", "New"  ),
+                    Members(Pair("onclick","CreateNewDoc()"),
+                    EMPTY_OBJ)),
+                Elements(
+                    Members(Pair("value", "Open" ),
+                    Members(Pair("onclick","OpenDoc()"),
+                    EMPTY_OBJ)),
+                Elements(
+                    Members(Pair("value", "Close"),
+                    Members(Pair("onclick","CloseDoc()"),
+                    EMPTY_OBJ)),
+                EMPTY_ARRAY)))),
+            EMPTY_OBJ)),
+        EMPTY_OBJ)))),
+    EMPTY_OBJ).
+}

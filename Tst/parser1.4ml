@@ -1,0 +1,9 @@
+[
+parsers.JSONParser = '"JSONParser at ..\JSONParser\bin\Debug\JSONParser.dll"',
+parse_ActiveParser = "JSONParser"
+]
+
+model M0 of JSON at "../JSON.4ml"
+{
+    `{ "key" : 0 }`.
+}

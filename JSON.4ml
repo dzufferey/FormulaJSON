@@ -1,0 +1,14 @@
+domain JSON
+{
+    Value ::= { TRUE, FALSE, NULL } + String + Real + Object + Array.
+
+    Members ::= new (kv: any Pair, rest: any Object).
+
+    Object ::= { EMPTY_OBJ } + Members.
+
+    Pair ::= new (key: String, value: any Value).
+
+    Elements ::= new (value: any Value, rest: any Array).
+    
+    Array ::= { EMPTY_ARRAY } + Elements.
+}
