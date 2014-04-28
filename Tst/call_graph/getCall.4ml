@@ -1,0 +1,45 @@
+[
+modules.JSON = "JSON at ..\\..\\JSON.4ml"
+]
+
+domain FunCall {
+	Call ::= new (sig:  String, class: String, line: Real).
+}
+
+transform getCall (in:: JSON) returns (out:: FunCall)
+{
+//	out.Call(sg, cls, ln) :-
+//		InObj(m, "signature", sg),
+//		InObj(m, "src-loc", m'),
+//		InObj(m', "class", cls),
+//		InObj(m', "line", ln).
+	out.Call(sg, cls, ln) :-
+		InObj(m, "signature", sg), sg is String,
+		InObj(m, "src-loc", m'), m' is in.Members,
+		InObj(m', "class", cls), cls is String,
+		InObj(m', "line", ln), ln is Real.
+
+	AllObjs ::= (in.Members).
+	AllObjs(m) :-
+		m is in.Members;
+		InObj(_, _, m), m is in.Members;
+		InArray(_, _, m), m is in.Members.
+		
+	MemberOf ::= (in.Members, in.Members).
+	MemberOf(m, m') :-
+		AllObjs(m), m = m';
+		MemberOf(m, m''), m' = m''.rest, m' is in.Members.
+	
+	InObj ::= (in.Members, String, in.Value).
+	InObj(m, k, v) :-
+		MemberOf(m, m'),
+		k = m'.kv.key,
+		v = m'.kv.value.
+	
+	InArray ::= (in.Members, String, in.Value).
+	InArray(m, k, v) :-
+		InObj(m, k, in.Elements(v, _));
+		InObj(m, k, in.Elements(_, v));
+		InArray(m, k, in.Elements(v, _));
+		InArray(m, k, in.Elements(_, v)).
+}

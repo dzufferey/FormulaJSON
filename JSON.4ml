@@ -9,6 +9,6 @@ domain JSON
     Pair ::= new (key: String, value: any Value).
 
     Elements ::= new (value: any Value, rest: any Array).
-    
+
     Array ::= { EMPTY_ARRAY } + Elements.
 }
