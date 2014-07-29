@@ -8,16 +8,11 @@ domain FunCall {
 
 transform getCall (in:: JSON) returns (out:: FunCall)
 {
-//	out.Call(sg, cls, ln) :-
-//		InObj(m, "signature", sg),
-//		InObj(m, "src-loc", m'),
-//		InObj(m', "class", cls),
-//		InObj(m', "line", ln).
 	out.Call(sg, cls, ln) :-
-		InObj(m, "signature", sg), sg is String,
-		InObj(m, "src-loc", m'), m' is in.Members,
-		InObj(m', "class", cls), cls is String,
-		InObj(m', "line", ln), ln is Real.
+		InObj(m, "signature", sg), sg : String,
+		InObj(m, "src-loc", m'),
+		InObj(m', "class", cls), cls : String,
+		InObj(m', "line", ln), ln : Real.
 
 	AllObjs ::= (in.Members).
 	AllObjs(m) :-

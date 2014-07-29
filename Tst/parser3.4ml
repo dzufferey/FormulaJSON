@@ -1,6 +1,7 @@
 [
 parsers.JSONParser = '"JSONParser at ..\JSONParser\bin\Debug\JSONParser.dll"',
-parse_ActiveParser = "JSONParser"
+parse_ActiveParser = "JSONParser",
+parse_ActiveRenderer = "JSONParser"
 ]
 
 model M1a of JSON at "../JSON.4ml"

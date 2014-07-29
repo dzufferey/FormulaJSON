@@ -496,7 +496,14 @@
             writer.WriteLine("{");
             foreach (var p in pairs){
                 printPair(writer, innerIndent, p);
-                writer.WriteLine(","); //TODO but the last
+                if (p != pairs.Last())
+                {
+                    writer.WriteLine(",");
+                }
+                else
+                {
+                    writer.WriteLine();
+                }
             }
             fillIndent(writer, indent);
             writer.Write("}");
@@ -510,7 +517,14 @@
             foreach (var p in elts)
             {
                 print(writer, innerIndent, p, false, true);
-                writer.WriteLine(","); //TODO but the last
+                if (p != elts.Last())
+                {
+                    writer.WriteLine(",");
+                }
+                else
+                {
+                    writer.WriteLine();
+                }
             }
             fillIndent(writer, indent);
             writer.Write("]");
